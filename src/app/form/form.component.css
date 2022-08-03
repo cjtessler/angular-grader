@@ -1,0 +1,8 @@
+mat-form-field{
+    display: inline;
+}
+
+mat-toolbar {
+    background-color:slateblue;
+    color: white;
+}

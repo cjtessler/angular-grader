@@ -1,0 +1,32 @@
+<p>
+    <mat-toolbar>
+      <span>Grader</span>
+    </mat-toolbar>
+</p>
+
+<div *ngIf="!showResults">
+<form #submitForm="ngForm" (ngSubmit)="collectUserData(submitForm)">
+    <mat-form-field  appearance="fill">
+        <mat-label for="t1">Test 1</mat-label>
+        <input matInput type="number" pattern="[0-9]*" id="t1" name="t1" [defaultValue]="v1" ngModel>
+    </mat-form-field>
+    <mat-form-field  appearance="fill">
+        <mat-label for="t2">Test 2</mat-label>
+        <input matInput type="number" pattern="[0-9]*" id="t2" name="t2" ngModel>
+    </mat-form-field>
+    <mat-form-field  appearance="fill">
+        <mat-label for="t1">Test 3</mat-label>
+        <input matInput type="number" pattern="[0-9]*" id="t3" name="t3" ngModel>
+    </mat-form-field>
+    <button mat-raised-button type="submit">Submit</button>
+</form>
+
+</div>
+
+<div *ngIf="showResults">
+    <span>sum: {{sum}}</span>
+    <form #clearForm="ngForm" (ngSubmit)="clearUserData(clearForm)">
+        <button mat-raised-button type="submit">Back</button>
+    </form>
+
+</div>
